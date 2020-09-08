@@ -25,10 +25,10 @@ app.post('/gameOver', (req, res, next) => {
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 1128;
+  port = 3001;
 }
 
 app.listen(port, function() {
-  console.log('listening on port 3000!');
+  console.log('listening on port 3001!');
 });
 
