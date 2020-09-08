@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 3001;
 const bodyParser = require('body-parser');
 
 app.use(express.static('./client/dist'));
@@ -24,5 +23,12 @@ app.post('/gameOver', (req, res, next) => {
 
 
 
-app.listen(port, () => console.log(`App listening on port ${port}!`))
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 1128;
+}
+
+app.listen(port, function() {
+  console.log('listening on port 3000!');
+});
 
